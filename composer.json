@@ -1,0 +1,45 @@
+{
+  "name": "docsdk/docsdk-php",
+  "description": "PHP SDK for DocSDK APIs",
+  "homepage": "https://github.com/docsdk/docsdk-php",
+  "authors": [
+    {
+      "name": "Josias Montag",
+      "email": "josias@montag.info"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "psr/http-message": "^1.0",
+    "php-http/client-implementation": "^1.0 || ^2.0",
+    "php-http/httplug": "^1.0 || ^2.0",
+    "php-http/message-factory": "^1.0",
+    "php-http/discovery": "^1.0",
+    "symfony/options-resolver": "^4.2 || ^5.0",
+    "netresearch/jsonmapper": "^1.6",
+    "php-http/multipart-stream-builder": "^1.0",
+    "php-http/client-common": "^2.0",
+    "php-http/message": "^1.7",
+    "guzzlehttp/psr7": "^1.0"
+  },
+  "require-dev": {
+    "php-http/mock-client": "^1.0",
+    "guzzlehttp/guzzle": "^7.0",
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DocSDK\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DocSDK\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "tests": [
+      "vendor/bin/phpunit --verbose"
+    ]
+  }
+}
