@@ -4,8 +4,8 @@
   "homepage": "https://github.com/docsdk/docsdk-php",
   "authors": [
     {
-      "name": "Josias Montag",
-      "email": "josias@montag.info"
+      "name": "Marvin Chen",
+      "email": "chenming@9yuntu.com"
     }
   ],
   "require": {
