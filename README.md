@@ -2,8 +2,7 @@
 Install
 -------------------
 
-To install the PHP SDK you will need to be using [Composer]([https://getcomposer.org/)
-in your project. 
+To install the PHP SDK you will need to be using [Composer]([https://getcomposer.org) in your project. 
 
 Install the SDK alongside Guzzle 7:
 
