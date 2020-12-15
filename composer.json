@@ -2,12 +2,7 @@
   "name": "docsdk/docsdk-php",
   "description": "PHP SDK for DocSDK APIs",
   "homepage": "https://github.com/docsdk/docsdk-php",
-  "authors": [
-    {
-      "name": "Marvin Chen",
-      "email": "chenming@9yuntu.com"
-    }
-  ],
+  "license": "MIT",
   "require": {
     "php": "^7.1",
     "psr/http-message": "^1.0",
