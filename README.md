@@ -1,3 +1,7 @@
+docsdk-php
+=======================
+
+> This is the official PHP SDK for the DocSDK API. 
 
 
 Install
