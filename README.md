@@ -8,7 +8,7 @@ To install the PHP SDK you will need to be using [Composer](https://getcomposer.
 Install the SDK alongside Guzzle 7:
 
 ```bash
-composer require docSDK/docSDK-php guzzlehttp/guzzle:^7.0
+composer require docsdk/docsdk-php php-http/guzzle7-adapter
 ```
 
 This package is not tied to any specific HTTP client. Instead, it uses [Httplug](https://github.com/php-http/httplug) to let users choose whichever HTTP client they want to use.
