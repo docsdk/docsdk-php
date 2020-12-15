@@ -35,18 +35,17 @@ $docsdk = new DocSDK([
 $job = (new Job())
     ->setTag('myjob-1')
     ->addTask(
-        (new Task('import/url', 'import-my-file'))
+        (new Task('import/url', 'ImportURL'))
             ->set('url','https://my-url')
     )
     ->addTask(
-        (new Task('convert', 'convert-my-file'))
-            ->set('input', 'import-my-file')
+        (new Task('convert', 'ConvertFile'))
+            ->set('input', 'ImportURL')
             ->set('output_format', 'pdf')
-            ->set('some_other_option', 'value')
     )
     ->addTask(
-        (new Task('export/url', 'export-my-file'))
-            ->set('input', 'convert-my-file')
+        (new Task('export/url', 'ExportResult'))
+            ->set('input', 'ConvertFile')
     );
 
 $docsdk->jobs()->create($job)
