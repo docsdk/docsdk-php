@@ -123,3 +123,8 @@ foreach ($job->getExportUrls() as $file) {
 ```
 
 The `download()` method returns a PSR-7 `StreamInterface`, which can be used as a PHP resource using `detach()`.
+
+
+## Resources
+
+-   [API v2 Documentation](https://docsdk.com/docAPI)
