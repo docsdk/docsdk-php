@@ -79,20 +79,20 @@ use \DocSDK\Models\ImportUploadTask;
 
 
 $job = (new Job())
-    ->addTask(new Task('import/upload','upload-my-file'))
+    ->addTask(new Task('import/upload','UploadFile'))
     ->addTask(
-        (new Task('convert', 'convert-my-file'))
-            ->set('input', 'import-my-file')
+        (new Task('convert', 'ConvertFile'))
+            ->set('input', 'ImportFile')
             ->set('output_format', 'pdf')
     )
     ->addTask(
-        (new Task('export/url', 'export-my-file'))
-            ->set('input', 'convert-my-file')
+        (new Task('export/url', 'ExportResult'))
+            ->set('input', 'ConvertFile')
     );
 
 $docsdk->jobs()->create($job);
 
-$uploadTask = $job->getTasks()->whereName('upload-my-file')[0];
+$uploadTask = $job->getTasks()->whereName('UploadFile')[0];
 
 $docsdk->tasks()->upload($uploadTask, fopen('./file.pdf', 'r'));
 ```
