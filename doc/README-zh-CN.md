@@ -3,40 +3,38 @@
 </p>
 
 <h1 align="center">DocSDK</h1>
-<p align="center">A smart file (document) conversion development kit</p>
-<p align="center">English | <a href="doc/README-zh-CN.md">中文</a></p>
+<p align="center">一个智能文件（文档）转换的开发工具包</p>
+<p align="center"><a href="/README.md">English</a> | 中文</p>
 
-## About DocSDK
-
-> DocSDK is a development kit for smart file conversion. We support the conversion of various types of documents, including pdf, doc, docx, xls, xlsx, ppt, pptx, dwg, caj, svg, html, json, png, jpg, gif and other formats, more conversion formats can be viewed on our [website](https://www.docsdk.com/). There are 8 kinds of SDK support, including Java, Node.js, PHP, Python, Swift, CLI, AWS-Lambda and Laravel.
+## 关于 DocSDK
+> DocSDK 是一个智能文件转换的开发工具包。我们支持各类文档的转换，其中包括 pdf、doc、docx、xls、xlsx、ppt、pptx、dwg、caj、svg、html、json、png、jpg 和 gif 等等各种格式的转换，更多转换格式可查看[九云图网站](https://www.docsdk.com/) 。现有八种 SDK 的支持，其中包括 Java、Node.js、PHP、Python、Swift、CLI、AWS-Lambda 和 Laravel。
 > 
-> **Keywords: document conversion, file conversion, PDF to Word, PDF to PPT, PDF to HTML**
+> **关键词： 文档转换，文件转换，PDF转Word，PDF转PPT，PDF转HTML**
 
 ## docsdk-php
 
-> This is the official PHP SDK for the DocSDK API. 
+> 这是 [九云图 DocSDK API](https://www.docsdk.com/docAPI#sdk) 官方的 PHP 开发工具包.
 
 
-### Install
+### 安装
 
-To install the PHP SDK you will need to be using [Composer](https://getcomposer.org) in your project. 
+要安装 PHP SDK，您需要在项目中使用 [Composer](https://getcomposer.org)。 
 
-Install the SDK alongside Guzzle 7:
+与 Guzzle 7 一起安装 SDK：
 
 ```bash
 composer require docsdk/docsdk-php php-http/guzzle7-adapter
 ```
 
-This package is not tied to any specific HTTP client. Instead, it uses [Httplug](https://github.com/php-http/httplug) to let users choose whichever HTTP client they want to use.
+这个包没有绑定到任何特定的 HTTP 客户端。实际上，它使用 [Httplug](https://github.com/php-http/httplug) 让用户选择他们想要使用的 HTTP 客户端。
 
-If you want to use Guzzle 6 instead, use:
+如果您想改用 Guzzle 6，请使用：
 
 ```bash
 composer require docSDK/docSDK-php php-http/guzzle6-adapter
 ```
 
-
-### Creating Jobs
+### 创建 Jobs
 
 ```php
 use \DocSDK\DocSDK;
@@ -71,9 +69,9 @@ $docsdk->jobs()->create($job)
 ```
 
 
-### Uploading Files
+### 上传文件
 
-Uploads to DocSDK are done via `import/upload` tasks. This SDK offers a convenient upload method:
+可通过 `import/upload` 上传文件到 DocSDK。以下是一种简单的上传方法：
 
 ```php
 use \DocSDK\Models\Job;
@@ -98,9 +96,9 @@ $uploadTask = $job->getTasks()->whereName('upload-my-file')[0];
 
 $docsdk->tasks()->upload($uploadTask, fopen('./file.pdf', 'r'));
 ```
-The `upload()` method accepts a string, PHP resource or PSR-7 `StreamInterface` as second parameter.
+`upload()` 方法接受一个字符串、PHP 资源或 PSR-7 `StreamInterface` 作为第二个参数。
 
-You can also directly allow clients to upload files to DocSDK:
+也可以直接允许客户端上传文件到 DocSDK：
 
 ```html
 <form action="<?=$uploadTask->getResult()->form->url?>"
@@ -115,9 +113,9 @@ You can also directly allow clients to upload files to DocSDK:
 ```
 
 
-### Downloading Files
+### 下载文件
 
-DocSDK can generate public URLs for using `export/url` tasks. You can use the PHP SDK to download the output files when the Job is finished.
+DocSDK 可以使用 `export/url` 生成公开的链接，您可以使用这些 URL 下载输出文件。
 
 ```php
 $docsdk->jobs()->wait($job); // Wait for job completion
@@ -132,8 +130,8 @@ foreach ($job->getExportUrls() as $file) {
 }
 ```
 
-The `download()` method returns a PSR-7 `StreamInterface`, which can be used as a PHP resource using `detach()`.
+`download()` 方法返回一个 PSR-7 `StreamInterface`，可以使用 `detach()` 将其用作 PHP 资源。
 
-### Resources
+### 参考资源
 * [DocSDK API Documentation](https://www.docsdk.com/docAPI)
 * [DocSDK home page](https://www.docsdk.com/)
