@@ -3,7 +3,6 @@
 </p>
 
 <h1 align="center">DocSDK</h1>
-<p align="center">一个智能文件（文档）转换的开发工具包</p>
 <p align="center"><a href="/README.md">English</a> | 中文</p>
 
 ## 关于 DocSDK
@@ -133,5 +132,5 @@ foreach ($job->getExportUrls() as $file) {
 `download()` 方法返回一个 PSR-7 `StreamInterface`，可以使用 `detach()` 将其用作 PHP 资源。
 
 ### 参考资源
-* [DocSDK API Documentation](https://www.docsdk.com/docAPI)
-* [DocSDK home page](https://www.docsdk.com/)
+* [DocSDK API 文档](https://www.docsdk.com/docAPI)
+* [DocSDK 主页](https://www.docsdk.com/)
